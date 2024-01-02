@@ -47,7 +47,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void _getInitialBotMessage() async{
     var url = Uri.parse(
-        "https://sapdos-api.azurewebsites.net/api/Credentials/FeedbackJoiningBot");
+        "https://sapdos-api-v2.azurewebsites.net/api/Credentials/FeedbackJoiningBot");
 
     var requestBody=jsonEncode({"step":step});
 
@@ -77,7 +77,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void _sendMessage(String userMessage,int step) async {
 
     var url = Uri.parse(
-        "https://sapdos-api.azurewebsites.net/api/Credentials/FeedbackJoiningBot");
+        "https://sapdos-api-v2.azurewebsites.net/api/Credentials/FeedbackJoiningBot");
 
     var requestBody=jsonEncode({"step":step+1});
 

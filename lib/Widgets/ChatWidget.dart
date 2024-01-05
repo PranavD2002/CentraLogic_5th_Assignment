@@ -39,7 +39,9 @@ class ChatWidget extends StatelessWidget {
           ],
           Flexible(
             child: Container(
-              width: message.type == MessageType.bot ? 580 : 25,
+              width: message.type == MessageType.bot
+                  ? MediaQuery.of(context).size.width / 2.5
+                  : MediaQuery.of(context).size.width / 49,
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: message.type == MessageType.bot

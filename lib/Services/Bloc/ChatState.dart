@@ -1,13 +1,21 @@
+import 'package:feedback_agent/Agent/Models/DataModel.dart';
+
 abstract class ChatState {}
 
-class ChatInitialState extends ChatState {}
+
+
+class ChatBotInitialState extends ChatState {}
 
 class ChatLoadingState extends ChatState {}
 
-class ChatLoadedState extends ChatState {
-  final List<String> messages;
+class InvalidState extends ChatState {}
 
-  ChatLoadedState(this.messages);
+class ValidState extends ChatState {}
+
+class ChatLoadedState extends ChatState {
+  final List<DataModel>? chatBotList;
+
+  ChatLoadedState(this.chatBotList);
 }
 
 class ChatErrorState extends ChatState {

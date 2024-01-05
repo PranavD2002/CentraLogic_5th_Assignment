@@ -1,4 +1,3 @@
-
 import 'package:feedback_agent/Agent/Screens/ChatScreen.dart';
 import 'package:feedback_agent/Services/Bloc/ChatBloc.dart';
 import 'package:feedback_agent/Services/Bloc/ChatState.dart';
@@ -22,7 +21,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: ChatScreen(),
+      home: BlocProvider(
+        create: (context) => ChatBloc(),
+        child: ChatScreen(),
+      ),
     );
   }
 }

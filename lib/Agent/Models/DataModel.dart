@@ -9,21 +9,23 @@ DataModel dataModelFromJson(String str) => DataModel.fromJson(json.decode(str));
 String dataModelToJson(DataModel data) => json.encode(data.toJson());
 
 class DataModel {
-  String type;
-  String message;
+  String? type;
+  String? message;
+  String? answer;
 
   DataModel({
-    required this.type,
-    required this.message,
+    this.type,
+    this.message,
+    this.answer,
   });
 
   factory DataModel.fromJson(Map<String, dynamic> json) => DataModel(
-    type: json["type"],
-    message: json["message"],
-  );
+        type: json["type"],
+        message: json["message"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "type": type,
-    "message": message,
-  };
+        "type": type,
+        "message": message,
+      };
 }
